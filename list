@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Employee{
+    int id;
+    struct Employee *next;
+};
+
+struct Employee *getNewEmployee (const int id)
+{
+    struct Employee *newEmployee = NULL;
+    newEmployee = malloc(sizeof(struct Employee));
+    newEmployee->id = id;
+    newEmployee->next = NULL;
+    printf("Create a new employee with id %d\n", id);
+    return newEmployee;
+    
+}
+
+int main()
+{
+   
+
+    struct Employee *firstEmployee = NULL;
+
+    firstEmployee = getNewEmployee(1);
+    return 0;
+}
